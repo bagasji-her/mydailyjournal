@@ -14,7 +14,7 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Daily Journal | Admin</title>
+    <title>Daily journal | Admin</title>
     <link rel="icon" href="img/logo.png" />
     <link
     rel="stylesheet"
@@ -26,17 +26,19 @@ if (!isset($_SESSION['username'])) {
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
     <style> 
         #content {
             min-height: 460px;
-        } 
+        }
     </style>
 </head>
 <body>
     <!-- nav begin -->
-    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top bg-danger-subtle">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary sticky-top bg-warning-subtle">
     <div class="container">
-        <a class="navbar-brand" href="">My Daily Journal</a>
+        <a class="navbar-brand" href="">Daily Journal</a>
         <button
         class="navbar-toggler"
         type="button"
@@ -56,12 +58,19 @@ if (!isset($_SESSION['username'])) {
             <li class="nav-item">
                 <a class="nav-link" href="admin.php?page=article">Article</a>
             </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="admin.php?page=galery">Gallery</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="index.php?page=galery">Homepage</a>
+            </li> 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-danger fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <?= $_SESSION['username']?>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="logout.php">Logout</a></li> 
+                    <li><a class="dropdown-item" href="admin.php?page=profile">Profil <?= $_SESSION['username']?></a></li>
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                 </ul>
             </li> 
         </ul>
@@ -71,7 +80,8 @@ if (!isset($_SESSION['username'])) {
     <!-- nav end -->
     <!-- content begin -->
     <section id="content" class="p-5">
-        <div class="container"> 
+        <div class="container">
+            Selamat Datang <?= $_SESSION['username'] ?>
             <?php
             if(isset($_GET['page'])){
             ?>
@@ -89,25 +99,25 @@ if (!isset($_SESSION['username'])) {
     </section>
     <!-- content end -->
     <!-- footer begin -->
-    <footer class="text-center p-5 bg-danger-subtle">
-    <div>
-        <a href="https://www.instagram.com/udinusofficial"
+    <footer class="text-center p-3 bg-info">
+        <div>
+            <a href="https://www.instagram.com/abd_khlm"
         ><i class="bi bi-instagram h2 p-2 text-dark"></i
         ></a>
-        <a href="https://twitter.com/udinusofficial"
+        <a href="https://twitter.com/abd_khlm"
         ><i class="bi bi-twitter h2 p-2 text-dark"></i
         ></a>
-        <a href="https://wa.me/+62812685577"
+        <a href="https://wa.me/+6281329239256"
         ><i class="bi bi-whatsapp h2 p-2 text-dark"></i
         ></a>
     </div>
-    <div>Aprilyani Nur Safitri &copy; 2023</div>
-    </footer>
-    <!-- footer end -->
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"
-    ></script>
+    <div>Bagas Aji Herlambang &copy; 2024</div>
+</footer>
+<!-- footer end -->
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"
+></script>
 </body>
 </html> 
